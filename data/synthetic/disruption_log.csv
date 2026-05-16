@@ -1,0 +1,146 @@
+disruption_id,flight_id,root_cause,sub_cause,description,recovery_action
+DSR00001,FLT00001,Technical,Minor maintenance finding,Tire change,Extended turnaround
+DSR00002,FLT00004,Ground_Handling,Fuel truck delay,Fuel truck delay,Extended boarding
+DSR00003,FLT00011,Weather,Crosswind exceeding limits,Thunderstorm at origin,Diverted briefly
+DSR00004,FLT00014,Technical,APU replacement,APU replacement,Engineering hold
+DSR00005,FLT00020,Ground_Handling,Catering uplift late,Fuel truck delay,Push delay accepted
+DSR00006,FLT00021,Ground_Handling,Pushback tug breakdown,Catering uplift late,Push delay accepted
+DSR00007,FLT00022,Ground_Handling,Pushback tug breakdown,Late baggage loading,Extended boarding
+DSR00008,FLT00027,Technical,APU replacement,Minor maintenance finding,Extended turnaround
+DSR00009,FLT00035,Technical,Aircraft change required,APU replacement,Aircraft swap
+DSR00010,FLT00038,Ground_Handling,Pushback tug breakdown,Pushback tug breakdown,Extended boarding
+DSR00011,FLT00041,Crew,Pilot illness,Crew positioning delay,Schedule re-plan
+DSR00012,FLT00045,Technical,APU replacement,Tire change,Aircraft swap
+DSR00013,FLT00049,Weather,Thunderstorm at origin,Thunderstorm at origin,Diverted briefly
+DSR00014,FLT00050,ATC,Slot delay at CDG,Lagos approach congestion,Held on stand
+DSR00015,FLT00052,Weather,Heavy rain at destination,Heavy rain at destination,Diverted briefly
+DSR00016,FLT00053,Technical,Minor maintenance finding,Minor maintenance finding,Aircraft swap
+DSR00017,FLT00054,Ground_Handling,Pushback tug breakdown,Fuel truck delay,Extended boarding
+DSR00018,FLT00059,Weather,Harmattan dust reducing visibility,Heavy rain at destination,Held on stand
+DSR00019,FLT00061,Crew,Cabin crew duty time exceeded,Cabin crew duty time exceeded,Schedule re-plan
+DSR00020,FLT00063,Weather,Heavy rain at destination,Harmattan dust reducing visibility,Diverted briefly
+DSR00021,FLT00065,Crew,Cabin crew duty time exceeded,Cabin crew duty time exceeded,Schedule re-plan
+DSR00022,FLT00067,Technical,Minor maintenance finding,Tire change,Aircraft swap
+DSR00023,FLT00068,Ground_Handling,Fuel truck delay,Late baggage loading,Extended boarding
+DSR00024,FLT00072,Technical,Aircraft change required,Aircraft change required,Extended turnaround
+DSR00025,FLT00073,Weather,Crosswind exceeding limits,Harmattan dust reducing visibility,Diverted briefly
+DSR00026,FLT00074,Weather,Harmattan dust reducing visibility,Crosswind exceeding limits,Reschedule to next slot
+DSR00027,FLT00085,Technical,Aircraft change required,Aircraft change required,Extended turnaround
+DSR00028,FLT00093,Crew,Cabin crew duty time exceeded,Cabin crew duty time exceeded,Reserve crew called
+DSR00029,FLT00100,Weather,Crosswind exceeding limits,Harmattan dust reducing visibility,Diverted briefly
+DSR00030,FLT00101,Crew,Crew positioning delay,Crew positioning delay,Reserve crew called
+DSR00031,FLT00103,Weather,Heavy rain at destination,Crosswind exceeding limits,Diverted briefly
+DSR00032,FLT00112,Crew,Cabin crew duty time exceeded,Pilot illness,Reserve crew called
+DSR00033,FLT00113,Weather,Crosswind exceeding limits,Crosswind exceeding limits,Reschedule to next slot
+DSR00034,FLT00116,Technical,Minor maintenance finding,Tire change,Engineering hold
+DSR00035,FLT00117,Weather,Thunderstorm at origin,Crosswind exceeding limits,Reschedule to next slot
+DSR00036,FLT00118,Technical,Tire change,Tire change,Aircraft swap
+DSR00037,FLT00119,ATC,Slot delay at CDG,Slot delay at CDG,Reduced taxi speed
+DSR00038,FLT00120,Weather,Thunderstorm at origin,Crosswind exceeding limits,Reschedule to next slot
+DSR00039,FLT00129,Weather,Thunderstorm at origin,Heavy rain at destination,Diverted briefly
+DSR00040,FLT00138,Ground_Handling,Fuel truck delay,Fuel truck delay,Extended boarding
+DSR00041,FLT00142,Other,Schedule recovery,Schedule recovery,Accepted minor delay
+DSR00042,FLT00146,Technical,Aircraft change required,Tire change,Engineering hold
+DSR00043,FLT00148,Weather,Crosswind exceeding limits,Heavy rain at destination,Reschedule to next slot
+DSR00044,FLT00152,Weather,Harmattan dust reducing visibility,Harmattan dust reducing visibility,Reschedule to next slot
+DSR00045,FLT00155,Other,Operational disruption,Operational disruption,Accepted minor delay
+DSR00046,FLT00156,Technical,APU replacement,Aircraft change required,Extended turnaround
+DSR00047,FLT00157,Other,Operational disruption,Operational disruption,Accepted minor delay
+DSR00048,FLT00161,ATC,Lagos approach congestion,Lagos approach congestion,Held on stand
+DSR00049,FLT00163,Technical,Aircraft change required,APU replacement,Engineering hold
+DSR00050,FLT00166,Crew,Pilot illness,Cabin crew duty time exceeded,Schedule re-plan
+DSR00051,FLT00167,Ground_Handling,Fuel truck delay,Late baggage loading,Extended boarding
+DSR00052,FLT00168,Technical,Aircraft change required,Tire change,Extended turnaround
+DSR00053,FLT00170,ATC,Lagos approach congestion,Slot delay at CDG,Held on stand
+DSR00054,FLT00175,Weather,Heavy rain at destination,Harmattan dust reducing visibility,Diverted briefly
+DSR00055,FLT00177,Ground_Handling,Late baggage loading,Catering uplift late,Extended boarding
+DSR00056,FLT00178,Weather,Thunderstorm at origin,Harmattan dust reducing visibility,Held on stand
+DSR00057,FLT00183,Weather,Thunderstorm at origin,Heavy rain at destination,Diverted briefly
+DSR00058,FLT00189,Technical,Tire change,Aircraft change required,Engineering hold
+DSR00059,FLT00191,Weather,Heavy rain at destination,Crosswind exceeding limits,Reschedule to next slot
+DSR00060,FLT00196,Technical,Aircraft change required,Minor maintenance finding,Aircraft swap
+DSR00061,FLT00206,Ground_Handling,Late baggage loading,Catering uplift late,Extended boarding
+DSR00062,FLT00209,Technical,Aircraft change required,Minor maintenance finding,Aircraft swap
+DSR00063,FLT00222,Crew,Crew positioning delay,Pilot illness,Schedule re-plan
+DSR00064,FLT00224,Technical,Minor maintenance finding,Minor maintenance finding,Extended turnaround
+DSR00065,FLT00225,ATC,Abidjan ground hold,Slot delay at CDG,Reduced taxi speed
+DSR00066,FLT00226,Technical,Tire change,Aircraft change required,Aircraft swap
+DSR00067,FLT00230,Weather,Thunderstorm at origin,Harmattan dust reducing visibility,Reschedule to next slot
+DSR00068,FLT00237,Technical,Tire change,APU replacement,Extended turnaround
+DSR00069,FLT00238,Weather,Crosswind exceeding limits,Thunderstorm at origin,Reschedule to next slot
+DSR00070,FLT00239,ATC,Slot delay at CDG,Slot delay at CDG,Reduced taxi speed
+DSR00071,FLT00241,Weather,Harmattan dust reducing visibility,Harmattan dust reducing visibility,Diverted briefly
+DSR00072,FLT00248,Technical,Tire change,Tire change,Extended turnaround
+DSR00073,FLT00251,Crew,Pilot illness,Pilot illness,Reserve crew called
+DSR00074,FLT00253,Crew,Crew positioning delay,Pilot illness,Reserve crew called
+DSR00075,FLT00254,Weather,Crosswind exceeding limits,Crosswind exceeding limits,Held on stand
+DSR00076,FLT00262,Weather,Harmattan dust reducing visibility,Harmattan dust reducing visibility,Held on stand
+DSR00077,FLT00264,Crew,Crew positioning delay,Cabin crew duty time exceeded,Schedule re-plan
+DSR00078,FLT00265,Other,Schedule recovery,Schedule recovery,Accepted minor delay
+DSR00079,FLT00270,Weather,Harmattan dust reducing visibility,Heavy rain at destination,Reschedule to next slot
+DSR00080,FLT00273,Weather,Thunderstorm at origin,Crosswind exceeding limits,Held on stand
+DSR00081,FLT00274,Technical,Minor maintenance finding,Aircraft change required,Aircraft swap
+DSR00082,FLT00275,Weather,Harmattan dust reducing visibility,Thunderstorm at origin,Reschedule to next slot
+DSR00083,FLT00277,Weather,Thunderstorm at origin,Heavy rain at destination,Reschedule to next slot
+DSR00084,FLT00280,ATC,Lagos approach congestion,Lagos approach congestion,Reduced taxi speed
+DSR00085,FLT00284,Other,Schedule recovery,Schedule recovery,Accepted minor delay
+DSR00086,FLT00291,Weather,Thunderstorm at origin,Thunderstorm at origin,Reschedule to next slot
+DSR00087,FLT00295,Technical,Tire change,Tire change,Engineering hold
+DSR00088,FLT00301,Technical,Tire change,Tire change,Engineering hold
+DSR00089,FLT00307,Technical,Tire change,Tire change,Engineering hold
+DSR00090,FLT00310,Ground_Handling,Late baggage loading,Pushback tug breakdown,Extended boarding
+DSR00091,FLT00318,Technical,Aircraft change required,Tire change,Extended turnaround
+DSR00092,FLT00319,Other,Schedule recovery,Schedule recovery,Accepted minor delay
+DSR00093,FLT00321,Weather,Harmattan dust reducing visibility,Heavy rain at destination,Held on stand
+DSR00094,FLT00324,Crew,Pilot illness,Cabin crew duty time exceeded,Reserve crew called
+DSR00095,FLT00325,Crew,Pilot illness,Pilot illness,Schedule re-plan
+DSR00096,FLT00326,Crew,Pilot illness,Pilot illness,Reserve crew called
+DSR00097,FLT00335,Weather,Heavy rain at destination,Harmattan dust reducing visibility,Diverted briefly
+DSR00098,FLT00344,Crew,Cabin crew duty time exceeded,Pilot illness,Reserve crew called
+DSR00099,FLT00347,Weather,Heavy rain at destination,Crosswind exceeding limits,Diverted briefly
+DSR00100,FLT00349,Weather,Heavy rain at destination,Heavy rain at destination,Reschedule to next slot
+DSR00101,FLT00351,Weather,Harmattan dust reducing visibility,Crosswind exceeding limits,Held on stand
+DSR00102,FLT00355,Crew,Pilot illness,Pilot illness,Reserve crew called
+DSR00103,FLT00362,Other,Schedule recovery,Schedule recovery,Accepted minor delay
+DSR00104,FLT00363,Crew,Pilot illness,Pilot illness,Schedule re-plan
+DSR00105,FLT00368,Crew,Cabin crew duty time exceeded,Pilot illness,Schedule re-plan
+DSR00106,FLT00371,ATC,Lagos approach congestion,Abidjan ground hold,Held on stand
+DSR00107,FLT00373,Technical,Aircraft change required,Minor maintenance finding,Engineering hold
+DSR00108,FLT00374,Crew,Pilot illness,Crew positioning delay,Reserve crew called
+DSR00109,FLT00375,ATC,Slot delay at CDG,Abidjan ground hold,Reduced taxi speed
+DSR00110,FLT00376,Technical,Tire change,Aircraft change required,Aircraft swap
+DSR00111,FLT00377,Crew,Pilot illness,Pilot illness,Schedule re-plan
+DSR00112,FLT00378,Weather,Harmattan dust reducing visibility,Harmattan dust reducing visibility,Reschedule to next slot
+DSR00113,FLT00379,Weather,Heavy rain at destination,Crosswind exceeding limits,Reschedule to next slot
+DSR00114,FLT00380,Crew,Pilot illness,Crew positioning delay,Reserve crew called
+DSR00115,FLT00384,Other,Schedule recovery,Operational disruption,Accepted minor delay
+DSR00116,FLT00385,Weather,Thunderstorm at origin,Crosswind exceeding limits,Reschedule to next slot
+DSR00117,FLT00387,Weather,Harmattan dust reducing visibility,Thunderstorm at origin,Held on stand
+DSR00118,FLT00388,ATC,Lagos approach congestion,Lagos approach congestion,Reduced taxi speed
+DSR00119,FLT00389,Ground_Handling,Catering uplift late,Fuel truck delay,Push delay accepted
+DSR00120,FLT00392,Crew,Pilot illness,Pilot illness,Schedule re-plan
+DSR00121,FLT00393,Technical,APU replacement,APU replacement,Aircraft swap
+DSR00122,FLT00394,Weather,Thunderstorm at origin,Heavy rain at destination,Held on stand
+DSR00123,FLT00405,Crew,Pilot illness,Pilot illness,Reserve crew called
+DSR00124,FLT00406,Weather,Harmattan dust reducing visibility,Thunderstorm at origin,Reschedule to next slot
+DSR00125,FLT00407,Weather,Heavy rain at destination,Thunderstorm at origin,Reschedule to next slot
+DSR00126,FLT00413,ATC,Slot delay at CDG,Abidjan ground hold,Reduced taxi speed
+DSR00127,FLT00414,Technical,Tire change,Aircraft change required,Extended turnaround
+DSR00128,FLT00418,ATC,Lagos approach congestion,Slot delay at CDG,Reduced taxi speed
+DSR00129,FLT00420,Crew,Crew positioning delay,Crew positioning delay,Schedule re-plan
+DSR00130,FLT00421,Other,Schedule recovery,Operational disruption,Accepted minor delay
+DSR00131,FLT00422,Ground_Handling,Catering uplift late,Catering uplift late,Push delay accepted
+DSR00132,FLT00429,Weather,Heavy rain at destination,Crosswind exceeding limits,Held on stand
+DSR00133,FLT00432,Weather,Thunderstorm at origin,Harmattan dust reducing visibility,Diverted briefly
+DSR00134,FLT00433,Crew,Cabin crew duty time exceeded,Cabin crew duty time exceeded,Schedule re-plan
+DSR00135,FLT00445,Ground_Handling,Fuel truck delay,Pushback tug breakdown,Extended boarding
+DSR00136,FLT00450,Ground_Handling,Fuel truck delay,Late baggage loading,Extended boarding
+DSR00137,FLT00453,Weather,Crosswind exceeding limits,Heavy rain at destination,Reschedule to next slot
+DSR00138,FLT00457,Technical,APU replacement,Minor maintenance finding,Aircraft swap
+DSR00139,FLT00459,Technical,Tire change,Tire change,Extended turnaround
+DSR00140,FLT00462,ATC,Abidjan ground hold,Abidjan ground hold,Reduced taxi speed
+DSR00141,FLT00463,ATC,Abidjan ground hold,Slot delay at CDG,Held on stand
+DSR00142,FLT00468,Crew,Crew positioning delay,Pilot illness,Reserve crew called
+DSR00143,FLT00470,Crew,Pilot illness,Pilot illness,Reserve crew called
+DSR00144,FLT00476,Weather,Thunderstorm at origin,Crosswind exceeding limits,Held on stand
+DSR00145,FLT00480,Ground_Handling,Late baggage loading,Pushback tug breakdown,Push delay accepted

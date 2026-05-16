@@ -1,0 +1,15 @@
+item_id,item_type,item_name,base_price_usd,applies_to_route_type
+ANC01,baggage,Extra Bag 23kg,35,ALL
+ANC02,baggage,Extra Bag 32kg,50,ALL
+ANC03,seat,Standard Seat,8,ALL
+ANC04,seat,Preferred Seat,18,ALL
+ANC05,seat,Extra Legroom Seat,35,"Regional,International"
+ANC06,meal,Hot Meal Upgrade,15,"Regional,International"
+ANC07,meal,Premium Meal,25,International
+ANC08,lounge,Lounge Access ABJ,45,"Regional,International"
+ANC09,lounge,Lounge Access CDG,80,International
+ANC10,priority,Priority Boarding,12,ALL
+ANC11,priority,Fast Track Security,15,"Regional,International"
+ANC12,upgrade,Upgrade to PremEco,180,International
+ANC13,upgrade,Upgrade to Business,550,International
+ANC14,upgrade,Upgrade to Business,120,Regional

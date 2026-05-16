@@ -1,0 +1,160 @@
+version: 2
+
+semantic_models:
+
+  - name: flights
+    description: "Flight-grain semantic model for route economics."
+    model: ref('fct_flights')
+    defaults:
+      agg_time_dimension: flight_date
+
+    entities:
+      - {name: flight,   type: primary, expr: flight_id}
+      - {name: route,    type: foreign, expr: route_id}
+
+    dimensions:
+      - name: flight_date
+        type: time
+        type_params: {time_granularity: day}
+      - {name: flight_status,  type: categorical}
+      - {name: aircraft_type,  type: categorical}
+
+    measures:
+      - {name: total_revenue_usd_m,        agg: sum,   expr: total_revenue_usd}
+      - {name: total_operating_cost_usd_m, agg: sum,   expr: total_operating_cost_usd}
+      - {name: margin_usd_m,               agg: sum,   expr: margin_usd}
+      - {name: ask_m,                      agg: sum,   expr: ask}
+      - {name: rpk_m,                      agg: sum,   expr: rpk}
+      - {name: flights_count_m,            agg: count, expr: flight_id}
+      - {name: on_time_count_m,            agg: sum,   expr: "case when is_on_time then 1 else 0 end"}
+      - {name: cancelled_count_m,          agg: sum,   expr: "case when is_cancelled then 1 else 0 end"}
+
+
+  - name: bookings
+    description: "Booking-grain semantic model for upsell analysis."
+    model: ref('fct_bookings')
+    defaults:
+      agg_time_dimension: booking_date
+
+    entities:
+      - {name: booking,  type: primary, expr: booking_id}
+      - {name: customer, type: foreign, expr: customer_id}
+      - {name: route,    type: foreign, expr: route_id}
+
+    dimensions:
+      - name: booking_date
+        type: time
+        type_params: {time_granularity: day}
+      - {name: fare_class,      type: categorical}
+      - {name: fare_family,     type: categorical}
+      - {name: booking_channel, type: categorical}
+
+    measures:
+      - {name: bookings_count_m,           agg: count, expr: booking_id}
+      - {name: bookings_with_ancillary_m,  agg: sum,   expr: "case when has_any_ancillary then 1 else 0 end"}
+      - {name: ancillary_revenue_usd_m,    agg: sum,   expr: ancillary_revenue_usd}
+
+
+  - name: reviews
+    description: "Review-grain semantic model for sentiment analysis."
+    model: ref('fct_reviews_sentiment')
+    defaults:
+      agg_time_dimension: review_date
+
+    entities:
+      - {name: review, type: primary, expr: review_id}
+      - {name: route,  type: foreign, expr: route_id}
+
+    dimensions:
+      - name: review_date
+        type: time
+        type_params: {time_granularity: day}
+      - {name: sentiment_bucket, type: categorical}
+
+    measures:
+      - {name: reviews_count_m,    agg: count,   expr: review_id}
+      - {name: avg_rating_m,       agg: average, expr: rating}
+      - {name: promoter_count_m,   agg: sum,     expr: "case when is_promoter  then 1 else 0 end"}
+      - {name: detractor_count_m,  agg: sum,     expr: "case when is_detractor then 1 else 0 end"}
+
+
+metrics:
+
+  # Simple metrics
+  - {name: total_revenue_usd,        label: "Revenue (USD)",            type: simple, type_params: {measure: total_revenue_usd_m}}
+  - {name: total_operating_cost_usd, label: "Operating Cost (USD)",     type: simple, type_params: {measure: total_operating_cost_usd_m}}
+  - {name: margin_usd,               label: "Margin (USD)",             type: simple, type_params: {measure: margin_usd_m}}
+  - {name: ask,                      label: "ASK",                      type: simple, type_params: {measure: ask_m}}
+  - {name: rpk,                      label: "RPK",                      type: simple, type_params: {measure: rpk_m}}
+  - {name: flights_count,            label: "Flights",                  type: simple, type_params: {measure: flights_count_m}}
+  - {name: on_time_flights,          label: "On-Time Flights",          type: simple, type_params: {measure: on_time_count_m}}
+  - {name: cancelled_flights,        label: "Cancelled Flights",        type: simple, type_params: {measure: cancelled_count_m}}
+  - {name: bookings_count,           label: "Bookings",                 type: simple, type_params: {measure: bookings_count_m}}
+  - {name: bookings_with_ancillary,  label: "Bookings with Ancillary",  type: simple, type_params: {measure: bookings_with_ancillary_m}}
+  - {name: ancillary_revenue_usd,    label: "Ancillary Revenue (USD)",  type: simple, type_params: {measure: ancillary_revenue_usd_m}}
+  - {name: reviews_count,            label: "Reviews",                  type: simple, type_params: {measure: reviews_count_m}}
+  - {name: average_review_rating,    label: "Average Review Rating",    type: simple, type_params: {measure: avg_rating_m}}
+  - {name: promoter_count,           label: "Promoters",                type: simple, type_params: {measure: promoter_count_m}}
+  - {name: detractor_count,          label: "Detractors",               type: simple, type_params: {measure: detractor_count_m}}
+
+  # Ratio metrics
+  - name: route_margin_pct
+    label: "Route Margin %"
+    type: ratio
+    type_params: {numerator: margin_usd, denominator: total_revenue_usd}
+
+  - name: load_factor
+    label: "Load Factor"
+    type: ratio
+    type_params: {numerator: rpk, denominator: ask}
+
+  - name: rask
+    label: "RASK"
+    type: ratio
+    type_params: {numerator: total_revenue_usd, denominator: ask}
+
+  - name: cask
+    label: "CASK"
+    type: ratio
+    type_params: {numerator: total_operating_cost_usd, denominator: ask}
+
+  - name: on_time_performance
+    label: "On-Time Performance"
+    type: ratio
+    type_params: {numerator: on_time_flights, denominator: flights_count}
+
+  - name: cancellation_rate
+    label: "Cancellation Rate"
+    type: ratio
+    type_params: {numerator: cancelled_flights, denominator: flights_count}
+
+  - name: ancillary_attach_rate
+    label: "Ancillary Attach Rate"
+    type: ratio
+    type_params: {numerator: bookings_with_ancillary, denominator: bookings_count}
+
+  - name: arpu_ancillary_usd
+    label: "ARPU Ancillary (USD)"
+    type: ratio
+    type_params: {numerator: ancillary_revenue_usd, denominator: bookings_count}
+
+  - name: promoter_share
+    label: "% Promoters"
+    type: ratio
+    type_params: {numerator: promoter_count, denominator: reviews_count}
+
+  - name: detractor_share
+    label: "% Detractors"
+    type: ratio
+    type_params: {numerator: detractor_count, denominator: reviews_count}
+
+  # Derived metric (NPS Proxy)
+  - name: nps_proxy
+    label: "NPS Proxy"
+    description: "% promoters − % detractors"
+    type: derived
+    type_params:
+      expr: promoter_share - detractor_share
+      metrics:
+        - {name: promoter_share}
+        - {name: detractor_share}

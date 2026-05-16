@@ -1,0 +1,19 @@
+airci:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', './airci.duckdb') }}"
+      threads: 4
+
+    # Trino prod (commenté) — la même SQL fonctionne :
+    # prod:
+    #   type: trino
+    #   host: "{{ env_var('TRINO_HOST') }}"
+    #   port: 443
+    #   http_scheme: https
+    #   user: "{{ env_var('TRINO_USER') }}"
+    #   password: "{{ env_var('TRINO_PASSWORD') }}"
+    #   catalog: hive
+    #   schema: airci_analytics
+    #   threads: 8

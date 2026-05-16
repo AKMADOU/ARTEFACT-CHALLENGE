@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: ontology_strategic_underperforming_route
+    description: "Routes stratégiques mais déficitaires."
+    columns:
+      - name: route_id
+        tests: [not_null, unique]
+
+  - name: ontology_highvalue_atrisk_customer
+    description: "Customers high-value montrant désengagement."
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: ontology_upsell_ready_segment
+    description: "Customers Economy sous-attachés vs leurs pairs."
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: route_pnl_monthly
+    description: "Route × month rollup avec tous les KPIs prêts pour la BI."
+    columns:
+      - name: route_id
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_route'), field: route_id}

@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: dim_route
+    description: "One row per route. Joined to origin/destination airport metadata."
+    columns:
+      - name: route_id
+        tests: [not_null, unique]
+      - name: route_type
+        tests:
+          - accepted_values: {values: ['Domestic', 'Regional', 'International']}
+
+  - name: dim_aircraft
+    description: "One row per aircraft type with cost economics."
+    columns:
+      - name: aircraft_type
+        tests: [not_null, unique]
+      - name: aircraft_class
+        tests:
+          - accepted_values: {values: ['Short-Haul', 'Medium-Haul', 'Long-Haul']}
+
+  - name: dim_customer
+    description: "One row per customer with engagement summary baked in."
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: loyalty_tier
+        tests:
+          - accepted_values: {values: ['None', 'Explorer', 'Silver', 'Gold']}
+
+  - name: dim_date
+    description: "Date spine for the analysis window."
+    columns:
+      - name: date_day
+        tests: [not_null, unique]
+
+  - name: fct_flights
+    description: "Grain: one row per operated flight."
+    columns:
+      - name: flight_id
+        tests: [not_null, unique]
+      - name: route_id
+        tests:
+          - relationships: {to: ref('dim_route'), field: route_id}
+      - name: aircraft_type
+        tests:
+          - relationships: {to: ref('dim_aircraft'), field: aircraft_type}
+
+  - name: fct_bookings
+    description: "Grain: one row per booking."
+    columns:
+      - name: booking_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - relationships: {to: ref('dim_customer'), field: customer_id}
+      - name: flight_id
+        tests:
+          - relationships: {to: ref('fct_flights'), field: flight_id}
+
+  - name: fct_reviews_sentiment
+    description: "Grain: one row per customer review."
+    columns:
+      - name: review_id
+        tests: [not_null, unique]
+      - name: rating
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+              quote: false
+      - name: sentiment_bucket
+        tests:
+          - accepted_values: {values: ['Promoter', 'Passive', 'Detractor']}

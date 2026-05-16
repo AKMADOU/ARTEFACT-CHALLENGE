@@ -1,0 +1,52 @@
+name: 'airci'
+version: '1.0.0'
+config-version: 2
+
+profile: 'airci'
+
+model-paths: ["models"]
+seed-paths:  ["seeds"]
+macro-paths: ["macros"]
+test-paths:  ["tests"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  airci:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      core:
+        +schema: marts
+      analytics:
+        +schema: analytics
+
+seeds:
+  airci:
+    +quote_columns: false
+    aircraft_fleet:
+      +column_types:
+        seats_total:               integer
+        seats_business:            integer
+        seats_premium_eco:         integer
+        seats_economy:             integer
+        fuel_burn_kg_per_hour:     integer
+        cost_per_block_hour_usd:   integer
+        crew_cost_per_hour_usd:    integer
+        introduced_year:           integer
+        fleet_count:               integer
+    route_operating_costs:
+      +column_types:
+        fuel_cost_usd:            double
+        crew_cost_usd:            double
+        airport_fees_usd:         double
+        nav_fees_usd:             double
+        handling_cost_usd:        double
+        total_operating_cost_usd: double

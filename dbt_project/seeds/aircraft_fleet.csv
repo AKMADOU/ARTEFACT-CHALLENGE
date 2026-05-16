@@ -1,0 +1,5 @@
+aircraft_type,manufacturer,seats_total,seats_business,seats_premium_eco,seats_economy,fuel_burn_kg_per_hour,cost_per_block_hour_usd,crew_cost_per_hour_usd,introduced_year,fleet_count
+A319,Airbus,122,8,0,114,2400,4200,550,2013,2
+A320,Airbus,150,12,0,138,2500,4500,580,2017,3
+A320neo,Airbus,165,16,12,137,2100,4300,600,2022,2
+A330-900neo,Airbus,242,30,21,191,5500,9500,1200,2024,2

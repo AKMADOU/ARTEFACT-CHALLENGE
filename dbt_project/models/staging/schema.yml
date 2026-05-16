@@ -1,0 +1,123 @@
+version: 2
+
+models:
+  - name: stg_airports
+    columns:
+      - name: airport_code
+        tests: [not_null, unique]
+
+  - name: stg_routes
+    columns:
+      - name: route_id
+        tests: [not_null, unique]
+      - name: route_type
+        tests:
+          - accepted_values:
+              values: ['Domestic', 'Regional', 'International']
+      - name: origin_airport_code
+        tests:
+          - relationships: {to: ref('stg_airports'), field: airport_code}
+      - name: destination_airport_code
+        tests:
+          - relationships: {to: ref('stg_airports'), field: airport_code}
+
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: customer_segment
+        tests:
+          - accepted_values:
+              values: ['Budget', 'Standard', 'Business', 'Premium']
+
+  - name: stg_flights
+    columns:
+      - name: flight_id
+        tests: [not_null, unique]
+      - name: route_id
+        tests:
+          - relationships: {to: ref('stg_routes'), field: route_id}
+      - name: flight_status
+        tests:
+          - accepted_values:
+              values: ['On Time', 'Delayed', 'Cancelled']
+
+  - name: stg_bookings
+    columns:
+      - name: booking_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - relationships: {to: ref('stg_customers'), field: customer_id}
+      - name: flight_id
+        tests:
+          - relationships: {to: ref('stg_flights'), field: flight_id}
+      - name: fare_class
+        tests:
+          - accepted_values:
+              values: ['Economy', 'Premium Economy', 'Business']
+      - name: booking_status
+        tests:
+          - accepted_values:
+              values: ['Confirmed', 'Flown', 'Cancelled', 'No Show', 'Changed']
+
+  - name: stg_aircraft_fleet
+    columns:
+      - name: aircraft_type
+        tests: [not_null, unique]
+
+  - name: stg_route_operating_costs
+    columns:
+      - name: flight_id
+        tests: [not_null, unique]
+
+  - name: stg_ancillary_purchases
+    columns:
+      - name: ancillary_purchase_id
+        tests: [not_null, unique]
+      - name: booking_id
+        tests:
+          - relationships: {to: ref('stg_bookings'), field: booking_id}
+
+  - name: stg_loyalty_transactions
+    columns:
+      - name: loyalty_txn_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - relationships: {to: ref('stg_customers'), field: customer_id}
+      - name: txn_type
+        tests:
+          - accepted_values:
+              values: ['Earn', 'Redeem']
+
+  - name: stg_disruption_log
+    columns:
+      - name: disruption_id
+        tests: [not_null, unique]
+      - name: flight_id
+        tests:
+          - relationships: {to: ref('stg_flights'), field: flight_id}
+      - name: root_cause
+        tests:
+          - accepted_values:
+              values: ['Weather', 'Technical', 'Crew', 'ATC', 'Ground_Handling', 'Other']
+
+  - name: stg_support_tickets
+    columns:
+      - name: ticket_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - relationships: {to: ref('stg_customers'), field: customer_id}
+
+  - name: stg_customer_reviews
+    columns:
+      - name: review_id
+        tests: [not_null, unique]
+      - name: rating
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+              quote: false

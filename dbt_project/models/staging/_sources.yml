@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: airci_raw
+    description: "Starter dataset + Phase 1 synthetic enrichments"
+    schema: "{{ target.schema }}"
+    tables:
+      - name: airports
+      - name: routes
+      - name: customers
+      - name: flights
+      - name: bookings
+      - name: aircraft_fleet
+      - name: fuel_prices_monthly
+      - name: ancillary_catalog
+      - name: route_operating_costs
+      - name: ancillary_purchases
+      - name: loyalty_transactions
+      - name: disruption_log
+      - name: support_tickets
+      - name: customer_reviews
