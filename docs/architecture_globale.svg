@@ -1,0 +1,95 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Fond -->
+  <rect width="900" height="560" fill="#F8FAFF" rx="12"/>
+
+  <!-- Titre -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#0F3460">Architecture Air CI — Pipeline End-to-End</text>
+  <text x="450" y="58" text-anchor="middle" font-size="12" fill="#6B7280">Phase 1 → Phase 2 → Phase 3 + Phase 4</text>
+
+  <!-- ===== PHASE 1 : SEEDS ===== -->
+  <rect x="180" y="80" width="540" height="65" rx="10" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="180" y="80" width="8" height="65" rx="4" fill="#64748B"/>
+  <text x="450" y="107" text-anchor="middle" font-size="14" font-weight="700" fill="#1E293B">Phase 1 — Seeds · 14 CSV</text>
+  <text x="450" y="127" text-anchor="middle" font-size="12" fill="#475569">5 feuilles starter (Excel) + 9 datasets synthétiques générés (SEED=42)</text>
+
+  <!-- Flèche Seeds → dbt -->
+  <line x1="450" y1="145" x2="450" y2="170" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="465" y="162" font-size="11" fill="#6B7280">14 CSV</text>
+
+  <!-- ===== PHASE 2 : DBT PIPELINE ===== -->
+  <rect x="60" y="170" width="780" height="110" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="80" y="192" font-size="12" font-weight="600" fill="#1D4ED8">Phase 2 — dbt Pipeline (DuckDB)</text>
+
+  <!-- staging -->
+  <rect x="80" y="200" width="200" height="68" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="80" y="200" width="8" height="68" rx="4" fill="#3B82F6"/>
+  <text x="185" y="225" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">staging</text>
+  <text x="185" y="244" text-anchor="middle" font-size="11" fill="#1D4ED8">14 vues · 1:1 sources</text>
+  <text x="185" y="261" text-anchor="middle" font-size="10" fill="#3B82F6">casts + renames</text>
+
+  <!-- Flèche stg → int -->
+  <line x1="280" y1="234" x2="320" y2="234" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrblu)"/>
+
+  <!-- intermediate -->
+  <rect x="320" y="200" width="200" height="68" rx="8" fill="#C7D2FE" stroke="#6366F1" stroke-width="1.5"/>
+  <rect x="320" y="200" width="8" height="68" rx="4" fill="#6366F1"/>
+  <text x="425" y="225" text-anchor="middle" font-size="13" font-weight="700" fill="#3730A3">intermediate</text>
+  <text x="425" y="244" text-anchor="middle" font-size="11" fill="#4338CA">4 vues · joins</text>
+  <text x="425" y="261" text-anchor="middle" font-size="10" fill="#6366F1">logique métier</text>
+
+  <!-- Flèche int → marts -->
+  <line x1="520" y1="234" x2="560" y2="234" stroke="#6366F1" stroke-width="1.5" marker-end="url(#arrpur)"/>
+
+  <!-- marts -->
+  <rect x="560" y="200" width="265" height="68" rx="8" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="560" y="200" width="8" height="68" rx="4" fill="#7C3AED"/>
+  <text x="693" y="221" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">marts / analytics</text>
+  <text x="693" y="239" text-anchor="middle" font-size="10" fill="#6D28D9">4 dims · 3 facts · 3 ontology rules</text>
+  <text x="693" y="255" text-anchor="middle" font-size="10" fill="#6D28D9">route_pnl_monthly · 73 tests verts</text>
+
+  <!-- Flèche dbt → DuckDB -->
+  <line x1="450" y1="280" x2="450" y2="312" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== DUCKDB ===== -->
+  <rect x="240" y="312" width="420" height="68" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+  <rect x="240" y="312" width="8" height="68" rx="4" fill="#D97706"/>
+  <text x="455" y="340" text-anchor="middle" font-size="15" font-weight="700" fill="#92400E">⭐  airci.duckdb</text>
+  <text x="455" y="361" text-anchor="middle" font-size="12" fill="#B45309">Base analytique locale · source unique de vérité</text>
+
+  <!-- Flèche L → Dashboard -->
+  <path d="M330,380 L330,418 L200,418 L200,435" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrpur)"/>
+
+  <!-- Flèche R → MCP -->
+  <path d="M570,380 L570,418 L700,418 L700,435" fill="none" stroke="#0F766E" stroke-width="2" marker-end="url(#arrteal)"/>
+
+  <!-- ===== PHASE 3 : DASHBOARD ===== -->
+  <rect x="60" y="435" width="340" height="90" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="60" y="435" width="8" height="90" rx="4" fill="#7C3AED"/>
+  <text x="235" y="462" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">Phase 3 — Dashboard Streamlit</text>
+  <text x="235" y="482" text-anchor="middle" font-size="12" fill="#6D28D9">4 pages : Réseau · Clients · Upsell</text>
+  <text x="235" y="500" text-anchor="middle" font-size="12" fill="#6D28D9">Décision Layer · Plotly · DuckDB</text>
+
+  <!-- ===== PHASE 4 : MCP ===== -->
+  <rect x="500" y="435" width="340" height="90" rx="10" fill="#CCFBF1" stroke="#0F766E" stroke-width="1.5"/>
+  <rect x="500" y="435" width="8" height="90" rx="4" fill="#0F766E"/>
+  <text x="675" y="462" text-anchor="middle" font-size="14" font-weight="700" fill="#065F46">Phase 4 — MCP Server</text>
+  <text x="675" y="482" text-anchor="middle" font-size="12" fill="#047857">5 outils FastMCP · Claude Desktop</text>
+  <text x="675" y="500" text-anchor="middle" font-size="12" fill="#047857">query_route · reviews · budget</text>
+
+  <!-- Marqueurs de flèche -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="arrblu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="arrpur" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="arrteal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+</svg>

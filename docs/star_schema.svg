@@ -1,0 +1,125 @@
+<svg width="900" height="580" viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Fond -->
+  <rect width="900" height="580" fill="#F8FAFF" rx="12"/>
+
+  <!-- Titre -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#0F3460">Star Schema dbt — Air CI</text>
+  <text x="450" y="58" text-anchor="middle" font-size="12" fill="#6B7280">3 faits (grains distincts) · 4 dimensions partagées · Couche analytics</text>
+
+  <!-- ===== DIMENSIONS (gauche) ===== -->
+
+  <!-- dim_date -->
+  <rect x="30" y="90" width="175" height="72" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="30" y="90" width="175" height="22" rx="6" fill="#3B82F6"/>
+  <text x="118" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">dim_date</text>
+  <text x="118" y="124" text-anchor="middle" font-size="11" fill="#1D4ED8">Calendrier</text>
+  <text x="118" y="141" text-anchor="middle" font-size="10" fill="#3B82F6">date_day · year · month</text>
+  <text x="118" y="155" text-anchor="middle" font-size="10" fill="#3B82F6">year_month · day_type</text>
+
+  <!-- dim_route -->
+  <rect x="30" y="215" width="175" height="72" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="30" y="215" width="175" height="22" rx="6" fill="#1D4ED8"/>
+  <text x="118" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">dim_route</text>
+  <text x="118" y="249" text-anchor="middle" font-size="11" fill="#1D4ED8">Routes + villes</text>
+  <text x="118" y="266" text-anchor="middle" font-size="10" fill="#3B82F6">route_id · label · type</text>
+  <text x="118" y="280" text-anchor="middle" font-size="10" fill="#3B82F6">distance_km · block_time</text>
+
+  <!-- dim_aircraft -->
+  <rect x="30" y="340" width="175" height="72" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="30" y="340" width="175" height="22" rx="6" fill="#0369A1"/>
+  <text x="118" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">dim_aircraft</text>
+  <text x="118" y="374" text-anchor="middle" font-size="11" fill="#0369A1">Flotte + coûts</text>
+  <text x="118" y="391" text-anchor="middle" font-size="10" fill="#3B82F6">aircraft_type · seats</text>
+  <text x="118" y="405" text-anchor="middle" font-size="10" fill="#3B82F6">cost_per_block_hour</text>
+
+  <!-- dim_customer -->
+  <rect x="695" y="215" width="175" height="88" rx="8" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="695" y="215" width="175" height="22" rx="6" fill="#7C3AED"/>
+  <text x="783" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">dim_customer</text>
+  <text x="783" y="249" text-anchor="middle" font-size="11" fill="#5B21B6">LTV + loyalty</text>
+  <text x="783" y="266" text-anchor="middle" font-size="10" fill="#7C3AED">customer_id · segment</text>
+  <text x="783" y="281" text-anchor="middle" font-size="10" fill="#7C3AED">loyalty_tier · lifetime_rev</text>
+  <text x="783" y="296" text-anchor="middle" font-size="10" fill="#7C3AED">earn_events · attach_rate</text>
+
+  <!-- ===== FAITS (centre) ===== -->
+
+  <!-- fct_flights -->
+  <rect x="285" y="80" width="330" height="95" rx="10" fill="#FFF7ED" stroke="#D97706" stroke-width="2"/>
+  <rect x="285" y="80" width="330" height="26" rx="8" fill="#D97706"/>
+  <text x="450" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">fct_flights</text>
+  <text x="295" y="120" font-size="11" fill="#92400E">grain : 1 vol opéré</text>
+  <text x="295" y="136" font-size="10" fill="#B45309">revenue · cost · margin · rask · cask</text>
+  <text x="295" y="152" font-size="10" fill="#B45309">load_factor · otp · flight_status · disruption</text>
+
+  <!-- fct_bookings -->
+  <rect x="285" y="222" width="330" height="95" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+  <rect x="285" y="222" width="330" height="26" rx="8" fill="#10B981"/>
+  <text x="450" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">fct_bookings</text>
+  <text x="295" y="262" font-size="11" fill="#065F46">grain : 1 booking</text>
+  <text x="295" y="278" font-size="10" fill="#047857">ticket_price · ancillary_revenue</text>
+  <text x="295" y="294" font-size="10" fill="#047857">bought_lounge · bought_upgrade · bought_meal</text>
+
+  <!-- fct_reviews_sentiment -->
+  <rect x="285" y="364" width="330" height="95" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="2"/>
+  <rect x="285" y="364" width="330" height="26" rx="8" fill="#A855F7"/>
+  <text x="450" y="382" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">fct_reviews_sentiment ⭐</text>
+  <text x="295" y="404" font-size="11" fill="#6B21A8">grain : 1 review (source non-structurée)</text>
+  <text x="295" y="420" font-size="10" fill="#9333EA">rating · sentiment_bucket · topics</text>
+  <text x="295" y="436" font-size="10" fill="#9333EA">10 topic flags · is_promoter · is_detractor</text>
+
+  <!-- ===== FLÈCHES dims → facts ===== -->
+
+  <!-- dim_date → fct_flights -->
+  <line x1="205" y1="126" x2="285" y2="120" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fk)"/>
+
+  <!-- dim_route → fct_flights -->
+  <path d="M205,240 L245,240 L245,148 L285,133" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fk)"/>
+
+  <!-- dim_route → fct_bookings -->
+  <line x1="205" y1="262" x2="285" y2="262" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fk)"/>
+
+  <!-- dim_route → fct_reviews -->
+  <path d="M205,270 L245,270 L245,410 L285,405" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fk)"/>
+
+  <!-- dim_aircraft → fct_flights -->
+  <path d="M205,370 L255,370 L255,145 L285,140" fill="none" stroke="#0369A1" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fk)"/>
+
+  <!-- dim_customer → fct_bookings -->
+  <line x1="695" y1="258" x2="615" y2="258" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fkpur)"/>
+
+  <!-- dim_customer → fct_reviews -->
+  <path d="M695,295 L655,295 L655,408 L615,410" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#fkpur)"/>
+
+  <!-- fct_flights → fct_bookings (flight_id) -->
+  <line x1="450" y1="175" x2="450" y2="222" stroke="#D97706" stroke-width="1.5" marker-end="url(#fkorg)"/>
+  <text x="462" y="203" font-size="10" fill="#B45309">flight_id</text>
+
+  <!-- fct_bookings → fct_reviews (booking_id) -->
+  <line x1="450" y1="317" x2="450" y2="364" stroke="#10B981" stroke-width="1.5" marker-end="url(#fkgrn)"/>
+  <text x="462" y="345" font-size="10" fill="#047857">booking_id</text>
+
+  <!-- ===== COUCHE ANALYTICS (bas) ===== -->
+  <rect x="30" y="490" width="840" height="70" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="450" y="512" text-anchor="middle" font-size="12" font-weight="700" fill="#991B1B">Couche analytics — Ontology Rules</text>
+  <text x="180" y="535" text-anchor="middle" font-size="11" fill="#B91C1C">strategic_underperforming_route</text>
+  <text x="450" y="535" text-anchor="middle" font-size="11" fill="#B91C1C">highvalue_atrisk_customer</text>
+  <text x="720" y="535" text-anchor="middle" font-size="11" fill="#B91C1C">upsell_ready_segment</text>
+  <text x="450" y="553" text-anchor="middle" font-size="10" fill="#DC2626">+ route_pnl_monthly (BI-ready)</text>
+
+  <!-- Marqueurs -->
+  <defs>
+    <marker id="fk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="fkpur" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="fkorg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="fkgrn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+</svg>

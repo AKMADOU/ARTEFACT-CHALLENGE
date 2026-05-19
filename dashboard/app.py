@@ -82,11 +82,10 @@ with st.sidebar:
         label_visibility="collapsed",
     )
     st.markdown("---")
-    # st.caption("Données : Janvier 2025 · dbt + DuckDB")
-    st.caption("Artefact Analytics Engineer Challenge")
-    # st.markdown("---")
-    st.caption("Candidat : ADOU Kouame Mathurin ")
-    st.caption("LinkedIn: kouame-mathurin-adou")
+    st.caption("Dashboard construit dans le cadre du challenge Analytics Engineer — Artefact")
+    # st.caption("Artefact Analytics Engineer Challenge")
+    st.markdown("---")
+    st.caption("Candidat : ADOU Kouamé Mathurin")
     st.caption("07 47 10 92 96")
 
 

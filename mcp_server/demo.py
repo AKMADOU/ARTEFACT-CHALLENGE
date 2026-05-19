@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 # Import direct des fonctions (pas besoin du client MCP pour la démo)
-from mcp_server.server import (
+from server import (
     query_route_metrics,
     get_at_risk_customers,
     search_reviews_by_route,
