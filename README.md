@@ -546,18 +546,30 @@ cd dbt_project
 export DBT_PROFILES_DIR=.
 dbt seed && dbt run && dbt test
 
-# 4. Dashboard
+# 4. Pour la documentation dbt
+cd dbt_project
+dbt docs generate && dbt docs serve --port 8080
+
+# 5. Dashboard
 cd ..
 streamlit run dashboard/app.py
+# ou vous pouvez utiliser le lien du deployement de l'application sur streamlit pour voir le dashboard:
 
-# 5. MCP Demo (sans Claude Desktop)
+https://artefact-airci.streamlit.app/
+
+
+# 6. MCP Demo 
 cd mcp_server
 python demo.py
-```
+
+# 7. Les liens video pour le Dashboard et la demo du deployement sur IA
+# 7.1) https://www.loom.com/share/d55adfb2fd614cdca14edaa1de99651d
+# 7.2) https://www.loom.com/share/e9e0e55669854160bbcaca280c99bfb5
+# NB: la video a été faite par l'outil loom en ligne.
+
 
 **SEED=42** dans le générateur → output déterministe.
 **73 tests dbt** → intégrité référentielle et cohérence des enums garanties.
 
 ---
-
 *Soumission : Artefact Analytics Engineer Challenge — Niveau Mid-Level*

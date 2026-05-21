@@ -27,3 +27,19 @@ Happy modeling!
 [0m09:37:14.467761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e62f800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f431bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f4319a0>]}
 [0m09:37:14.468258 [debug] [MainThread]: Flushing usage events
 [0m09:37:15.406129 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:56:22.087883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111cd0680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d33fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d33e30>]}
+
+
+============================== 10:56:22.093532 | 216bee2e-6c89-48ed-818a-6b044d0308ec ==============================
+[0m10:56:22.093532 [info ] [MainThread]: Running with dbt=1.10.9
+[0m10:56:22.094151 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/Users/adoumathurin/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:56:22.094833 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/adoumathurin/Desktop/DOSSIERS/ARTEFACT/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m10:56:22.096847 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.119052045, "process_in_blocks": "0", "process_kernel_time": 0.272972, "process_mem_max_rss": "115204096", "process_out_blocks": "0", "process_user_time": 1.524537}
+[0m10:56:22.097728 [debug] [MainThread]: Command `dbt docs generate` failed at 10:56:22.097380 after 0.12 seconds
+[0m10:56:22.098104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111cd0680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111810e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d33920>]}
+[0m10:56:22.098457 [debug] [MainThread]: Flushing usage events
+[0m10:56:22.967095 [debug] [MainThread]: An error was encountered while trying to flush usage events
